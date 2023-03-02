@@ -1,4 +1,7 @@
 package com.jsp.medicworld.serviceimpl;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +12,12 @@ import com.jsp.medicworld.service.UserService;
 @Service
 public class UserServiceImpl implements UserService
 {
+
 	@Autowired
 	private UserDao repo;
 	
 	@Override
-	public User save(User user) 
-	{
+	public User save(User user) {
 		// TODO Auto-generated method stub
 		if(user.getPassword().equals(user.getConfirm_password()))
 		{
@@ -25,9 +28,9 @@ public class UserServiceImpl implements UserService
 			return null;
 		}
 	}
+
 	@Override
-	public User forgot(User user, int id) 
-	{
+	public User forgot(User user, int id) {
 		// TODO Auto-generated method stub
 		if(repo.existsById(id))
 		{
@@ -39,8 +42,7 @@ public class UserServiceImpl implements UserService
 		return null;
 	}
 	@Override
-	public String getmail(String usermail) 
-	{
+	public String getmail(String usermail) {
 		// TODO Auto-generated method stub
 		String s=repo.getusermail(usermail);
 		if(s!=null)
@@ -52,6 +54,8 @@ public class UserServiceImpl implements UserService
 			return null;
 		}
 	}
+
+
 	@Override
 	public User updateusingemail(User user, String email) {
 		// TODO Auto-generated method stub
@@ -64,5 +68,18 @@ public class UserServiceImpl implements UserService
 			}
 		}
 		return null;
+		
+		
 	}
+
+	
+	@Override
+	public List<User> getall() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+	
+	
+	
+	
 }
