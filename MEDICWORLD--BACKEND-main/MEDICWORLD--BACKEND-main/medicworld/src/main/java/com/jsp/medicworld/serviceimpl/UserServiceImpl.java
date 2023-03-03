@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService
 		}
 		return null;
 	}
+	
 	@Override
 	public String getmail(String usermail) {
 		// TODO Auto-generated method stub
@@ -69,7 +70,6 @@ public class UserServiceImpl implements UserService
 		}
 		return null;
 		
-		
 	}
 
 	
@@ -78,8 +78,11 @@ public class UserServiceImpl implements UserService
 		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
-	
-	
-	
+
+	@Override
+	public User getObject(String usermail) {
+		// TODO Auto-generated method stub
+		return repo.getusermaill(usermail);
+	}
 	
 }

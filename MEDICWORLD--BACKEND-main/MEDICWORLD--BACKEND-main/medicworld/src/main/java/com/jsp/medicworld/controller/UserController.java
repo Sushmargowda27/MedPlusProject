@@ -47,4 +47,10 @@ public class UserController
 	{
 		return ser.getall();
 	}
+	
+	@GetMapping("/getbymail/{email}")
+	public User getbymail(@PathVariable String email)
+	{
+		return ser.getObject(email);
+	}
 }

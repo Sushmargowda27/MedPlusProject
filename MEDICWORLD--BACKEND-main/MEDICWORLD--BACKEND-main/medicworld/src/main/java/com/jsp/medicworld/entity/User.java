@@ -21,6 +21,7 @@ public class User {
 	private String sugar;
 	private String address;
 	private int pincode;
+	
 	public int getUid() {
 		return uid;
 	}

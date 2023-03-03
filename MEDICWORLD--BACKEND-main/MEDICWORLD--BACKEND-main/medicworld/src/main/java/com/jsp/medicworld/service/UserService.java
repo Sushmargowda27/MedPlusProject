@@ -10,4 +10,5 @@ public interface UserService {
 	public String getmail(String usermail);
 	public User updateusingemail(User user, String email);
 	public List<User> getall();
+	public User getObject(String usermail);
 }
